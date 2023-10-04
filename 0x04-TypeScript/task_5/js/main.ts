@@ -1,23 +1,15 @@
-/// Create two interfaces MajorCredits and MinorCredits
-
-interface MajorCredits {
-  credits: number;
-  brand: string;
+export interface MajorCredits {
+  credits: number & { __brand: 'MajorCredits.credits' };
 }
 
-interface MinorCredits {
-  credits: number;
-  brand: string;
-}
-/// Add a brand property to each interface in order to uniquely identify each of them
-MajorCredits.brand = "Major";
-MinorCredits.brand = "Minor";
-
-/// Create two functions named sumMajorCredits and sumMinorCredits
-function sumMajorCredits(subject1: MajorCredits, subject2: MajorCredits): number {
-  return subject.credits = subject2.credits;
+export interface MinorCredits {
+  credits: number & { __brand: 'MinorCredits.credits' };
 }
 
-function sumMinorCredits(subject1: MinorCredits, subject2: MinorCredits): number {
-  return subject1.credits + subject2.credits;
+export function sumMajorCredits(subject1: MajorCredits, subject2: MajorCredits): MajorCredits {
+  return { credits: subject1.credits + subject2.credits } as MajorCredits;
+}
+
+export function sumMinorCredits(subject1: MinorCredits, subject2: MinorCredits): MinorCredits {
+  return { credits: subject1.credits + subject2.credits } as MinorCredits;
 }
