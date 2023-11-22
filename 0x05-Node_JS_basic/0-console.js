@@ -1,2 +1,2 @@
-const displayMessage = (thisString) => console.log(thisString);
+const displayMessage = (aString) => console.log(aString);
 module.exports = displayMessage;
