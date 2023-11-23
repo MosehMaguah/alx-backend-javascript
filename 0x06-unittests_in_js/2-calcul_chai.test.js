@@ -28,7 +28,7 @@ describe("calculateNumber", function() {
             expect(calculateNumber("DIVIDE", 4, 2)).to.equal(2);
         });
         it("checking if numbers round", function() {
-            expect(calculateNumber("DIVIDE", 4.6, 1.8)).to.equal(2);
+            expect(calculateNumber("DIVIDE", 4.6, 1.8)).to.equal(2.5);
         });
         it("checking if numbers round", function() {
             expect(calculateNumber("DIVIDE", 4, 0)).to.equal("Error");
