@@ -25,7 +25,7 @@ app.get('/available_payments', (request, response) => {
 app.post('/login', (request, response) => {
     const userName = request.body.userName;
     if (userName) {
-        response.send(`Welcome: ${userName}`);
+        response.send(`Welcome ${userName}`);
     } else {
         response.status(404).send();
     }
